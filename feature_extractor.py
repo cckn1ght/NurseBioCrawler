@@ -141,7 +141,7 @@ def fun_feature_extrator():
         return count_words'''
     ##########################################################################################
 
-    csv_name = 'annotated.csv'
+    csv_name = 'totalProfile.csv'
     file_pronouns = 'pronouns.txt'
     output_file = 'features.csv'
     feature_writer = csv.writer(open(output_file, 'w', newline=''))
@@ -207,7 +207,9 @@ def fun_feature_extrator():
         #####################################################################
         screen_name = line[1]
         followers_count = line[4]
+        followers_count = int(followers_count.replace(',', ''))
         following_count = line[5]
+        following_count = int(following_count.replace(',', ''))
         bio_pronouns_count = bio_pronouns_count
         bio_NNP_tags = func_tags_NNP(bio_tag_sequence)
         bio_PRP_tags = func_tags_PRP(bio_tag_sequence)
